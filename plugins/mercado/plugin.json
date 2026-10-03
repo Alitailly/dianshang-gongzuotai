@@ -1,0 +1,20 @@
+{
+  "name": "mercado",
+  "title": "美客多",
+  "description": "美客多多店铺经营看板：总览、商品、广告与消息。数据来自本机 8000 端口的看板服务。",
+  "version": "1.0.0",
+  "order": 30,
+  "enabled": true,
+  "menu": {
+    "path": "/mercado/overview",
+    "title": "美客多",
+    "icon": "Shop"
+  },
+  "frontend": {
+    "entry": "./frontend/index.js"
+  },
+  "api": {
+    "mount": "/api/mercado",
+    "module": "./server/index.js"
+  }
+}

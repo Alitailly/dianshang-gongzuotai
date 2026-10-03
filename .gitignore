@@ -1,0 +1,118 @@
+# 依赖
+node_modules/
+
+# 构建产物
+dist/
+build/
+
+# 服务端本地配置(含用户密码,不要提交)
+server/users.json
+server/.secret
+server/feishu.config.json
+server/cache/
+.secret
+
+# 环境变量
+.env
+.env.*
+!.env.example
+
+# 日志与临时文件
+*.log
+.DS_Store
+Thumbs.db
+._*
+
+# 编辑器/IDE 本地状态
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 备份/补丁残留文件
+*.bak
+*.bak-*
+*.orig
+*.rej
+*~
+
+# 通用 JSONL 运行时数据（脚本产出，不进 git）
+*.jsonl
+
+# 本地 AI 远端数据缓存(由 scripts/pull-bot-data.mjs 生成)
+data/remote/
+
+# 重构快照
+快照保存/
+
+# Reasonix 工具状态(桌面端会话/任务元数据,非项目代码)
+.reasonix/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+
+# 登录会话持久化文件
+server/.sessions.json
+
+# 任务历史留痕(运行时数据)
+server/task_history.json
+
+server/bot_instances.json
+
+# 插件启用状态(运行时数据)
+server/data/plugins.json
+server/data/market-operation-audit.jsonl
+server/data/
+
+# 插件运行时状态
+plugins/**/task_history.json
+
+# 竞品选品插件：真实配置与运行时文件（不进 git）
+plugins/market/scripts/damai_config.json
+plugins/market/scripts/feishu_notify.json
+plugins/market/scripts/batch_state.json
+plugins/market/scripts/batch_ctl.json
+plugins/market/scripts/schedule_state.json
+plugins/market/scripts/publish_progress.json
+plugins/market/scripts/publish_approval.json
+plugins/market/scripts/integrity_status.json
+plugins/market/scripts/self_blackair.jsonl
+plugins/market/scripts/goods_*.jsonl
+plugins/market/scripts/run_*.log
+plugins/market/scripts/*.log
+plugins/market/scripts/ml-scraper/tr_cache.json
+
+# 本地 bot 发布包/下载目录（含 .env/日志/聊天记录，禁止入库）
+xxh_down/
+# 本地 Reasonix 工具配置（含本机路径，不发布）
+reasonix.toml
+# 个人/工作文档（可能含作者信息，不发布）
+*.docx
+# 竞品选品插件：抓取指纹模板（含设备/会话指纹）
+plugins/market/scripts/ml-scraper/snoopy_body.json
+
+# 本地插件挂载目录整体不随本仓库上传
+# inquiry / market 各自是独立 Git 仓库（inquiry-plugin / selection-scraper），需分别提交推送
+# mercado 是后并入本目录的门户接入层，不含密钥，随本仓库提交
+/plugins/*
+!/plugins/mercado/
+!/plugins/mercado/**
+
+# 依赖本机业务模块的测试文件，不随仓库上传（本地保留）
+/test/market-lock.test.mjs
+/test/imageCompare.test.mjs
+
+# 本地 GitHub 上传规范，不随仓库上传
+/GITHUB_SAFE_UPLOAD.md
+
+# 项目改动记录（含真实飞书 base_token/表 ID 等内部信息，仅保留在本机）
+改动记录.md
+
+# 竞品选品插件：图片补传队列（含 record_id/图片 URL，运行时产物）
+plugins/market/scripts/queue_images.jsonl
+# 本地发布清单与基线备份（仅本地，不提交、不推送）
+.release-local/
+
+# 插件运行时数据根（先归属、后搬家；迁移后由插件数据目录接管）
+data/plugins/

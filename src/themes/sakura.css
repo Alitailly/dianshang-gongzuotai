@@ -1,0 +1,141 @@
+/* ============================================================
+ * 主题 08：樱花粉彩 Sakura
+ * 理念：浅粉白 + 樱粉，日系温柔的少女感
+ * 布局改编：大圆角卡片 14px、胶囊按钮、间距 24px
+ * 变量 + 组件形态样式均限定在本 [data-theme="sakura"] 块内，互不污染。
+ * ============================================================ */
+:root[data-theme="sakura"] {
+  /* ---------- EP 品牌色 ---------- */
+  --el-color-primary: #f472b6;
+  --el-color-primary-light-3: #f68ec4;
+  --el-color-primary-light-5: #f8aad2;
+  --el-color-primary-light-7: #fac6e0;
+  --el-color-primary-light-8: #fbd4e7;
+  --el-color-primary-light-9: #fdeef6;
+  --el-color-primary-dark-2: #c35b92;
+  --el-color-success: #7fbf8e;
+  --el-color-warning: #e6a23c;
+  --el-color-danger: #e86d7a;
+  --el-color-info: #b391a1;
+
+  /* ---------- EP 基础 ---------- */
+  --el-bg-color: #ffffff;
+  --el-bg-color-overlay: #ffffff;
+  --el-bg-color-page: #fdf6fa;
+  --el-text-color-primary: #5c3a4a;
+  --el-text-color-regular: #7a5566;
+  /* 2026-09-11 对比度审计:原 #96758a 仅 3.79:1,加深到 #7a5967(≈5.6:1) */
+  --el-text-color-secondary: #7a5967;
+  /* 2026-09-11 对比度审计:原 #bca0ae 仅 2.25:1,加深到 #856a78(≈4.6:1) */
+  --el-text-color-placeholder: #856a78;
+  --el-border-color: #f0d8e2;
+  --el-border-color-light: #f5e0ea;
+  --el-border-color-lighter: #f8e9f0;
+  --el-border-color-extra-light: #fcf0f5;
+  --el-fill-color-blank: #ffffff;
+  --el-fill-color-light: #fdf3f8;
+  --el-fill-color-lighter: #fbe9f2;
+
+  /* ---------- 圆角与阴影 ---------- */
+  --el-border-radius-base: 12px;
+  --el-border-radius-small: 10px;
+  --el-border-radius-round: 24px;
+  --el-box-shadow-light: 0 2px 8px rgba(244, 114, 182, 0.1);
+  --el-box-shadow: 0 6px 20px rgba(244, 114, 182, 0.12);
+
+  /* ---------- 业务: 背景/卡片/文字 ---------- */
+  --app-bg: #fdf6fa;
+  --app-card-bg: #ffffff;
+  --app-card-border: #f5e0ea;
+  --app-card-header-border: #f2dbe6;
+  --app-card-shadow: 0 2px 10px rgba(244, 114, 182, 0.08);
+  --app-text-primary: #5c3a4a;
+  --app-text-regular: #7a5566;
+  /* 2026-09-11 对比度审计:原 #96758a 仅 3.79:1,加深到 #7a5967(≈5.6:1) */
+  --app-text-secondary: #7a5967;
+  /* 2026-09-11 对比度审计:原 #bca0ae 仅 2.25:1,加深到 #856a78(≈4.6:1) */
+  --app-text-placeholder: #856a78;
+  --app-border: #f5e0ea;
+  --app-border-light: #f8e9f0;
+  --app-hover-bg: #fdf3f8;
+  --app-success: #7fbf8e;
+  --app-warning: #e6a23c;
+  --app-danger: #e86d7a;
+  --app-info: #f0d8e2;
+  --app-on-primary: #111111;
+  --app-on-success: #111111;
+  --app-on-danger: #050807;
+  --app-table-th-bg: #fdf3f8;
+  /* 2026-09-11 对比度审计:原 #c35b92 在粉底表头仅 ≈3.9:1,加深到 #8f3f66(≈5.7:1) */
+  --app-table-th-text: #8f3f66;
+  --app-log-bg: #fdf3f8;
+  --app-scrollbar-thumb: #e8b8cd;
+  --app-scrollbar-hover: #d895b2;
+
+  /* ---------- 业务: 布局 ---------- */
+  --app-header-height: 56px;
+  --app-header-bg: linear-gradient(90deg, #fdf2f7 0%, #fce7f0 100%);
+  --app-header-text: #7c3a55;
+  --app-logo-bg: rgba(124, 58, 85, 0.9); /* 浅色顶栏:白色 Logo 需深色底 */
+  --app-header-soft: rgba(120, 55, 80, 0.75);
+  --app-header-btn-bg: rgba(141, 74, 99, 0.08);
+  --app-header-btn-border: rgba(120, 55, 80, 0.32);
+  --app-header-btn-hover-bg: rgba(141, 74, 99, 0.14);
+  --app-header-btn-hover-border: rgba(120, 55, 80, 0.45);
+  --app-sidebar-width: 220px;
+  --app-sidebar-bg: #fffafc;
+  --app-sidebar-border: #f5e0ea;
+  --app-menu-text: #6e4a5c;
+  --app-content-padding: 20px;
+  --app-radius-card: 14px;
+  --app-radius-dialog: 16px;
+  --app-gap: 24px;
+}
+
+/* ============================================================
+ * 组件形态特色
+ * ============================================================ */
+[data-theme="sakura"] .el-button--primary {
+  background: #f472b6;
+  border-color: #f472b6;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgba(244, 114, 182, 0.3);
+}
+[data-theme="sakura"] .el-button--primary:hover,
+[data-theme="sakura"] .el-button--primary:focus {
+  background: #f68ec4;
+  border-color: #f68ec4;
+}
+[data-theme="sakura"] .el-card {
+  border: 1px solid rgba(244, 114, 182, 0.18);
+  box-shadow: 0 4px 14px rgba(244, 114, 182, 0.08);
+}
+[data-theme="sakura"] .app-menu .el-menu-item.is-active.el-menu-item,
+[data-theme="sakura"] .app-menu .el-menu-item.is-active.el-menu-item:hover {
+  background: #fdeef6;
+  border-radius: 14px;
+  /* 2026-09-11 对比度审计:原 #c35b92 对浅粉底仅 ≈3.3:1,加深到 #9c3a6d(≈5.3:1) */
+  color: #9c3a6d;
+}
+
+/* ============================================================
+ * 形态强化(2026-08-13):花瓣大圆角 + 柔粉描边 + 粉底表头
+ * ============================================================ */
+:root[data-theme="sakura"] {
+  --app-radius-card: 16px;
+  --app-radius-dialog: 18px;
+}
+[data-theme="sakura"] .el-card {
+  border-color: #fbe3ee;
+  box-shadow: 0 2px 12px rgba(244, 114, 182, 0.08);
+}
+[data-theme="sakura"] .el-table th.el-table__cell {
+  background: #fdf0f6 !important;
+  /* 2026-09-11 对比度审计:原 #b0557f 在粉底表头仅 ≈3.9:1,加深到 #8f3f66(≈5.7:1) */
+  color: #8f3f66;
+}
+
+/* 明确浅色控件渲染 */
+:root[data-theme="sakura"] {
+  color-scheme: light;
+}

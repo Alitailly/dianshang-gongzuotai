@@ -1,0 +1,123 @@
+/* ============================================================
+ * 主题 03：黑金奢感 Black & Gold
+ * 理念：纯黑 + 香槟金，克制的奢华商务感。
+ * 布局改编：留白加大(24px)、卡片细金描边、圆角 8px。
+ * ============================================================ */
+:root[data-theme="black-gold"] {
+  /* ---------- 原生控件色彩模式 ---------- */
+  color-scheme: dark;
+  /* ---------- EP 品牌色 ---------- */
+  --el-color-primary: #c9a25e;
+  --el-color-primary-light-3: #d4b37d;
+  --el-color-primary-light-5: #dfc69b;
+  --el-color-primary-light-7: #ead9bc;
+  --el-color-primary-light-8: #efe2cb;
+  --el-color-primary-light-9: #f7f0e3;
+  --el-color-primary-dark-2: #a1814b;
+  --el-color-success: #8fbf6f;
+  --el-color-warning: #d9a03f;
+  --el-color-danger: #b04a43;
+  --el-color-info: #8a8a8a;
+
+  /* ---------- EP 基础(暗色) ---------- */
+  --el-bg-color: #141414;
+  --el-bg-color-overlay: #1c1c1c;
+  --el-bg-color-page: #0a0a0a;
+  --el-text-color-primary: #f5f0e6;
+  --el-text-color-regular: #c9c2b4;
+  --el-text-color-secondary: #a8a29a;
+  --el-text-color-placeholder: #6e6a63;
+  --el-border-color: #333333;
+  --el-border-color-light: #2a2a2a;
+  --el-border-color-lighter: #222222;
+  --el-border-color-extra-light: #1a1a1a;
+  --el-fill-color-blank: #141414;
+  --el-fill-color-light: #1a1a1a;
+  --el-fill-color-lighter: #222222;
+
+  /* ---------- 圆角与阴影 ---------- */
+  --el-border-radius-base: 8px;
+  --el-border-radius-small: 6px;
+  --el-border-radius-round: 20px;
+  --el-box-shadow-light: 0 1px 6px rgba(0, 0, 0, 0.5);
+  --el-box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6);
+
+  /* ---------- 业务: 背景/卡片/文字 ---------- */
+  --app-bg: #0a0a0a;
+  --app-card-bg: #141414;
+  --app-card-border: #2a2a2a;
+  --app-card-header-border: #2a2a2a;
+  --app-card-shadow: 0 2px 16px rgba(201, 162, 94, 0.06);
+  --app-text-primary: #f5f0e6;
+  --app-text-regular: #c9c2b4;
+  --app-text-secondary: #a8a29a;
+  --app-text-placeholder: #6e6a63;
+  --app-border: #2a2a2a;
+  --app-border-light: #222222;
+  --app-hover-bg: #1c1c1c;
+  --app-success: #8fbf6f;
+  --app-warning: #d9a03f;
+  --app-danger: #b04a43;
+  --app-info: #333333;
+  --app-on-primary: #111111;
+  --app-on-success: #111111;
+  --app-on-danger: #ffffff;
+  --app-table-th-bg: #181818;
+  --app-table-th-text: #c9a25e;
+  --app-log-bg: #0d0d0d;
+  --app-scrollbar-thumb: #3a3a3a;
+  --app-scrollbar-hover: #c9a25e;
+
+  /* ---------- 业务: 布局(留白奢华) ---------- */
+  --app-header-height: 56px;
+  --app-header-bg: #0a0a0a;
+  --app-header-text: #c9a25e;
+  --app-logo-bg: transparent;
+  --app-header-soft: rgba(255, 255, 255, 0.7);
+  --app-header-btn-bg: rgba(255, 255, 255, 0.12);
+  --app-header-btn-border: rgba(255, 255, 255, 0.25);
+  --app-header-btn-hover-bg: rgba(255, 255, 255, 0.22);
+  --app-header-btn-hover-border: rgba(255, 255, 255, 0.4);
+  --app-sidebar-width: 220px;
+  --app-sidebar-bg: #0f0f0f;
+  --app-sidebar-border: #222222;
+  --app-menu-text: #b5aea0;
+  --app-content-padding: 24px;
+  --app-radius-card: 8px;
+  --app-radius-dialog: 10px;
+  --app-gap: 20px;
+}
+
+/* ============================================================
+ * 组件形态特色:描边金按钮 / 细金边卡片 / 金色左条菜单
+ * ============================================================ */
+[data-theme="black-gold"] .el-button--primary {
+  background: transparent;
+  border: 1px solid #c9a25e;
+  color: #c9a25e;
+  box-shadow: none;
+}
+[data-theme="black-gold"] .el-button--primary:hover,
+[data-theme="black-gold"] .el-button--primary:focus {
+  background: rgba(201, 162, 94, 0.12);
+  border-color: #dfc69b;
+  color: #dfc69b;
+}
+[data-theme="black-gold"] .el-card {
+  border: 1px solid rgba(201, 162, 94, 0.22);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+}
+[data-theme="black-gold"] .app-menu .el-menu-item.is-active.el-menu-item {
+  background: rgba(201, 162, 94, 0.08);
+  border-left: 3px solid #c9a25e;
+  color: #c9a25e;
+}
+[data-theme="black-gold"] .el-table th.el-table__cell {
+  border-bottom: 1px solid rgba(201, 162, 94, 0.35);
+}
+
+[data-theme="black-gold"] .app-menu .el-menu-item.is-active.el-menu-item:hover {
+  background: rgba(201, 162, 94, 0.08);
+  border-left: 3px solid #c9a25e;
+  color: #c9a25e;
+}

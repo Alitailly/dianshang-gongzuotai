@@ -1,0 +1,6 @@
+requests>=2.28.0
+python-dotenv>=1.0.0
+
+# 看板后端依赖（fastapi / uvicorn / apscheduler 等），
+# README 的部署命令用本文件，故在此一并引入
+-r backend/requirements.txt

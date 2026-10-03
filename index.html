@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>选品助手</title>
+    <script>
+      // 提前恢复主题,避免暗色主题用户刷新时先闪一下浅色默认主题
+      (function () {
+        try {
+          var t = localStorage.getItem('rpa-theme')
+          var allowedThemes = ['black-air', 'cyberpunk', 'black-gold', 'retro-paper', 'sakura', 'terminal-green']
+          if (t && allowedThemes.indexOf(t) !== -1) document.documentElement.setAttribute('data-theme', t)
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- jszip + epub 合计约 320KB，仅电子书阅读器需要。
+         改为在 EbookDrawer 打开书籍时按需注入（epub.min.js 依赖全局 JSZip，须按序加载），
+         不再阻塞首屏。 -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

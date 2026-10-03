@@ -1,0 +1,27 @@
+# 环境变量（含密钥）
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+venv/
+.venv/
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# macOS
+.DS_Store
+feishu.env
+
+# 店铺凭证（含 access/refresh token，勿提交）
+stores.d/*.env
+!stores.d/store.example.env
+
+# 运行时产物（可再生，不入库）
+data/dashboard.db
+data/.daily_update_marker
+data/exports/

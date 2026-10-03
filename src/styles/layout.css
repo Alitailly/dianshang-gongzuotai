@@ -1,0 +1,91 @@
+/* ============================================================
+ * Layout — 版式层（最后加载）
+ * ------------------------------------------------------------
+ * 只管「排版与克制」：页面容器、卡片层级、页头、返回按钮。
+ * 颜色一律取主题令牌，不在这里定义新配色。
+ * ============================================================ */
+
+:root {
+  --app-shell-aside-width: 232px;
+  --app-content-padding: 24px;
+  --app-page-max-width: 1480px;
+  --app-section-gap: 16px;
+}
+
+/* 默认主题（深空蓝）去掉每张卡片顶部的渐变刻线与头部渐变，其余主题保留各自气质 */
+:root:not([data-theme]),
+:root[data-theme="black-air"] {
+  --app-card-accent-opacity: 0;
+  --app-card-header-bg: transparent;
+}
+
+/* ---------- 页面容器 ---------- */
+.app-page {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--app-page-max-width, 1480px);
+  margin: 0 auto;
+  padding: var(--app-content-padding, 24px);
+}
+
+.app-page > * + * {
+  margin-top: var(--app-section-gap, 16px);
+}
+
+/* ---------- 卡片：普通卡片静止，只有可点击的卡片才有悬浮反馈 ---------- */
+.el-card:hover {
+  transform: none;
+  border-color: var(--app-card-border, #e8eaef);
+  box-shadow: var(--app-card-shadow, 0 1px 4px rgba(0, 0, 0, 0.05));
+}
+
+.el-card.is-hover-shadow:hover,
+.tool-card:hover,
+.entry-card:hover,
+.plugin-card:hover,
+.theme-card:hover {
+  border-color: var(--app-card-hover-border, var(--el-color-primary-light-7, #aac5f8));
+  box-shadow: var(--app-card-hover-shadow, 0 12px 28px rgba(15, 23, 42, 0.1));
+}
+
+/* 卡片套卡片时，内层不再画顶部刻线和阴影，避免层层叠叠 */
+.el-card .el-card {
+  box-shadow: none;
+}
+
+.el-card .el-card::before {
+  display: none;
+}
+
+.el-card__header {
+  letter-spacing: 0.3px;
+}
+
+/* ---------- 询盘子页通用页头里的「返回」按钮：做成圆角描边按钮 ---------- */
+.card-header .header-left > .el-button.is-text:first-child {
+  height: 30px;
+  min-height: 30px;
+  padding: 0 12px 0 8px;
+  border: 1px solid var(--app-border, #e8eaef);
+  border-radius: 999px;
+  background: var(--app-card-bg, #fff);
+  color: var(--app-text-regular, #606266);
+  font-size: 13px;
+}
+
+.card-header .header-left > .el-button.is-text:first-child:hover {
+  border-color: var(--app-accent-line, var(--el-color-primary-light-5));
+  color: var(--app-accent, var(--el-color-primary));
+  background: var(--app-accent-soft, var(--app-hover-bg));
+}
+
+/* ---------- 分区标题 ---------- */
+.section-title::before {
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --app-content-padding: 12px;
+  }
+}

@@ -1,0 +1,145 @@
+/* ============================================================
+ * 主题 04：复古纸感 Retro Paper
+ * 理念：米黄纸 + 深棕红，旧文档/报纸气质。
+ * 布局改编：浅色米顶栏(创意)、近直角卡片(2px)、纸感投影。
+ * ============================================================ */
+:root[data-theme="retro-paper"] {
+  /* ---------- EP 品牌色 ---------- */
+  --el-color-primary: #9a3b26;
+  --el-color-primary-light-3: #ae5a45;
+  --el-color-primary-light-5: #c27f6e;
+  --el-color-primary-light-7: #d6a596;
+  --el-color-primary-light-8: #e0b8ac;
+  --el-color-primary-light-9: #f3e7e2;
+  --el-color-primary-dark-2: #7b2f1e;
+  --el-color-success: #6f7f4f;
+  --el-color-warning: #b5822f;
+  --el-color-danger: #9a3b26;
+  --el-color-info: #8a7a63;
+
+  /* ---------- EP 基础 ---------- */
+  --el-bg-color: #faf3e3;
+  --el-bg-color-overlay: #fdf8ec;
+  --el-bg-color-page: #f4ead8;
+  --el-text-color-primary: #3d2f1f;
+  --el-text-color-regular: #5c4c36;
+  /* 2026-09-11 对比度审计:原 #8a7a63 仅 3.49:1,加深到 #6d5d44(≈5.3:1) */
+  --el-text-color-secondary: #6d5d44;
+  /* 2026-09-11 对比度审计:原 #b3a68f 仅 2.01:1,加深到 #776849(≈4.6:1) */
+  --el-text-color-placeholder: #776849;
+  --el-border-color: #cdbb99;
+  --el-border-color-light: #e0d2b8;
+  --el-border-color-lighter: #eae0cc;
+  --el-border-color-extra-light: #f2ead9;
+  --el-fill-color-blank: #faf3e3;
+  --el-fill-color-light: #f5ecd9;
+  --el-fill-color-lighter: #efe4cc;
+
+  /* ---------- 圆角与阴影(纸感) ---------- */
+  --el-border-radius-base: 2px;
+  --el-border-radius-small: 2px;
+  --el-border-radius-round: 8px;
+  --el-box-shadow-light: 0 1px 3px rgba(90, 60, 30, 0.08);
+  --el-box-shadow: 0 3px 10px rgba(90, 60, 30, 0.12);
+
+  /* ---------- 业务: 背景/卡片/文字 ---------- */
+  --app-bg: #f4ead8;
+  --app-card-bg: #faf3e3;
+  --app-card-border: #e0d2b8;
+  --app-card-header-border: #e0d2b8;
+  --app-card-shadow: 0 1px 3px rgba(90, 60, 30, 0.08);
+  --app-text-primary: #3d2f1f;
+  --app-text-regular: #5c4c36;
+  /* 2026-09-11 对比度审计:原 #8a7a63 仅 3.49:1,加深到 #6d5d44(≈5.3:1) */
+  --app-text-secondary: #6d5d44;
+  /* 2026-09-11 对比度审计:原 #b3a68f 仅 2.01:1,加深到 #776849(≈4.6:1) */
+  --app-text-placeholder: #776849;
+  --app-border: #e0d2b8;
+  --app-border-light: #eae0cc;
+  --app-hover-bg: #f5ecd9;
+  --app-success: #6f7f4f;
+  --app-warning: #b5822f;
+  --app-danger: #9a3b26;
+  --app-info: #cdbb99;
+  --app-on-primary: #ffffff;
+  --app-on-success: #0b0b0b;
+  --app-on-danger: #ffffff;
+  --app-table-th-bg: #efe4cc;
+  --app-table-th-text: #7b2f1e;
+  --app-log-bg: #f5ecd9;
+  --app-scrollbar-thumb: #c9b795;
+  --app-scrollbar-hover: #a8956f;
+
+  /* ---------- 业务: 布局(浅色米顶栏) ---------- */
+  --app-header-height: 56px;
+  --app-header-bg: #f4ead8;
+  --app-header-text: #7b2f1e;
+  --app-logo-bg: rgba(123, 47, 30, 0.9); /* 浅色顶栏:白色 Logo 需深色底 */
+  --app-header-soft: rgba(123, 47, 30, 0.65);
+  --app-header-btn-bg: rgba(123, 47, 30, 0.08);
+  --app-header-btn-border: rgba(123, 47, 30, 0.22);
+  --app-header-btn-hover-bg: rgba(123, 47, 30, 0.14);
+  --app-header-btn-hover-border: rgba(123, 47, 30, 0.35);
+  --app-sidebar-width: 220px;
+  --app-sidebar-bg: #faf3e3;
+  --app-sidebar-border: #e0d2b8;
+  --app-menu-text: #5c4c36;
+  --app-content-padding: 24px;
+  --app-radius-card: 2px;
+  --app-radius-dialog: 4px;
+  --app-gap: 20px;
+}
+
+/* ============================================================
+ * 组件形态特色:做旧棕红按钮 / 双细边框纸感卡片 / 衬线标题
+ * ============================================================ */
+[data-theme="retro-paper"] .el-button--primary {
+  background: #9a3b26;
+  border-color: #7b2f1e;
+  border-radius: 2px;
+  box-shadow: 0 2px 0 #7b2f1e;
+}
+[data-theme="retro-paper"] .el-button--primary:hover,
+[data-theme="retro-paper"] .el-button--primary:focus {
+  background: #b04a30;
+  border-color: #7b2f1e;
+}
+[data-theme="retro-paper"] .el-card {
+  border: 1px solid #e0d2b8;
+  outline: 1px solid #cdbb99;
+  outline-offset: 2px;
+  box-shadow: 0 1px 3px rgba(90, 60, 30, 0.08);
+}
+[data-theme="retro-paper"] .app-menu .el-menu-item.is-active.el-menu-item {
+  background: #f5ecd9;
+  border-left: 3px solid #9a3b26;
+  border-radius: 0;
+  color: #7b2f1e;
+}
+[data-theme="retro-paper"] .app-title {
+  font-family: Georgia, 'Times New Roman', 'Songti SC', 'SimSun', serif !important;
+  letter-spacing: 2px;
+}
+
+[data-theme="retro-paper"] .app-menu .el-menu-item.is-active.el-menu-item:hover {
+  background: #f5ecd9;
+  border-left: 3px solid #9a3b26;
+  border-radius: 0;
+  color: #7b2f1e;
+}
+
+/* ============================================================
+ * 字体差异化(2026-08-13):衬线字体 + 纸张颗粒纹理,复古纸感
+ * ============================================================ */
+:root[data-theme="retro-paper"] {
+  --app-font: Georgia, 'Songti SC', 'SimSun', serif;
+}
+[data-theme="retro-paper"] body {
+  background-image: radial-gradient(rgba(90, 50, 30, 0.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+/* 明确浅色控件渲染 */
+:root[data-theme="retro-paper"] {
+  color-scheme: light;
+}

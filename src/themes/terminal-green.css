@@ -1,0 +1,144 @@
+/* ============================================================
+ * 主题 14：终端绿 Terminal Green
+ * 理念：黑底绿字 + 等宽字体 + CRT 扫描线 + 荧光文字阴影，
+ *       复古计算机终端质感，契合 RPA 自动化工具气质。
+ * 变量 + 组件形态样式均限定在本 [data-theme="terminal-green"] 块内。
+ * ============================================================ */
+:root[data-theme="terminal-green"] {
+  /* ---------- 原生控件色彩模式 ---------- */
+  color-scheme: dark;
+  /* ---------- 字体:全局等宽(终端感) ---------- */
+  --app-font: 'SF Mono', 'Menlo', Consolas, 'Courier New', monospace;
+  --app-font-mono: 'SF Mono', 'Menlo', Consolas, 'Courier New', monospace;
+
+  /* ---------- EP 品牌色:荧光绿 ---------- */
+  --el-color-primary: #33ff66;
+  --el-color-primary-light-3: #5fff85;
+  --el-color-primary-light-5: #8affa8;
+  --el-color-primary-light-7: #b5ffc9;
+  --el-color-primary-light-8: #caffe0;
+  --el-color-primary-light-9: #e6fff0;
+  --el-color-primary-dark-2: #28cc52;
+  --el-color-success: #33ff66;
+  --el-color-warning: #ffcc33;
+  --el-color-danger: #ff4455;
+  --el-color-info: #4a7a5c;
+
+  /* ---------- EP 基础(纯黑 CRT) ---------- */
+  --el-bg-color: #0c1012;
+  --el-bg-color-overlay: #11181a;
+  --el-bg-color-page: #070a0b;
+  --el-text-color-primary: #c8ffd9;
+  --el-text-color-regular: #8fd4a0;
+  --el-text-color-secondary: #5f9a70;
+  /* 2026-09-11 对比度审计:原 #3d6150 对深底仅 2.75:1,提亮到 #55856b(≈4.5:1) */
+  --el-text-color-placeholder: #55856b;
+  --el-border-color: #1e4a2e;
+  --el-border-color-light: #16381f;
+  --el-border-color-lighter: #112b18;
+  --el-border-color-extra-light: #0d2012;
+  --el-fill-color-blank: #0c1012;
+  --el-fill-color-light: #11181a;
+  --el-fill-color-lighter: #16201c;
+
+  /* ---------- 圆角:直角(终端无圆角) ---------- */
+  --el-border-radius-base: 0;
+  --el-border-radius-small: 0;
+  --el-border-radius-round: 0;
+
+  /* ---------- 业务:背景/卡片/文字 ---------- */
+  --app-bg: #070a0b;
+  --app-card-bg: #0c1012;
+  --app-card-border: #1e4a2e;
+  --app-card-header-border: #16381f;
+  --app-card-shadow: 0 0 12px rgba(51, 255, 102, 0.08);
+  --app-text-primary: #c8ffd9;
+  --app-text-regular: #8fd4a0;
+  --app-text-secondary: #5f9a70;
+  /* 2026-09-11 对比度审计:原 #3d6150 对深底仅 2.75:1,提亮到 #55856b(≈4.5:1) */
+  --app-text-placeholder: #55856b;
+  --app-border: #1e4a2e;
+  --app-border-light: #112b18;
+  --app-hover-bg: #11181a;
+  --app-success: #33ff66;
+  --app-warning: #ffcc33;
+  --app-danger: #ff4455;
+  --app-info: #1e4a2e;
+  --app-on-primary: #050807;
+  --app-on-success: #050807;
+  --app-on-danger: #050807;
+  --app-table-th-bg: #0e1513;
+  --app-table-th-text: #33ff66;
+  --app-log-bg: #050807;
+  --app-scrollbar-thumb: #1e4a2e;
+  --app-scrollbar-hover: #33ff66;
+
+  /* ---------- 业务:布局 ---------- */
+  --app-header-height: 56px;
+  --app-header-bg: #0a0f10;
+  --app-header-text: #33ff66;
+  --app-logo-bg: transparent;
+  --app-header-soft: rgba(51, 255, 102, 0.6);
+  --app-header-btn-bg: rgba(51, 255, 102, 0.08);
+  --app-header-btn-border: rgba(51, 255, 102, 0.35);
+  --app-header-btn-hover-bg: rgba(51, 255, 102, 0.16);
+  --app-header-btn-hover-border: rgba(51, 255, 102, 0.6);
+  --app-sidebar-width: 220px;
+  --app-sidebar-bg: #0a0f10;
+  --app-sidebar-border: #112b18;
+  --app-menu-text: #8fd4a0;
+  --app-content-padding: 20px;
+  --app-radius-card: 0;
+  --app-radius-dialog: 0;
+  --app-gap: 20px;
+}
+
+/* ============================================================
+ * 组件形态特色:绿描边按钮 / 荧光文字 / CRT 扫描线 / 绿色光标菜单
+ * ============================================================ */
+[data-theme="terminal-green"] .el-button--primary {
+  background: rgba(51, 255, 102, 0.12);
+  border: 1px solid #33ff66;
+  color: #33ff66;
+  text-shadow: 0 0 6px rgba(51, 255, 102, 0.6);
+  box-shadow: none;
+}
+[data-theme="terminal-green"] .el-button--primary:hover,
+[data-theme="terminal-green"] .el-button--primary:focus {
+  background: rgba(51, 255, 102, 0.22);
+  border-color: #8affa8;
+  color: #8affa8;
+  text-shadow: 0 0 10px rgba(51, 255, 102, 0.9);
+}
+[data-theme="terminal-green"] .el-card {
+  border: 1px solid #1e4a2e;
+  box-shadow: inset 0 0 18px rgba(51, 255, 102, 0.03);
+}
+[data-theme="terminal-green"] .el-card:hover {
+  border-color: rgba(51, 255, 102, 0.5);
+}
+[data-theme="terminal-green"] .app-menu .el-menu-item.is-active.el-menu-item {
+  background: rgba(51, 255, 102, 0.1);
+  color: #33ff66;
+  text-shadow: 0 0 8px rgba(51, 255, 102, 0.7);
+  border-left: 3px solid #33ff66;
+}
+[data-theme="terminal-green"] .app-header {
+  border-bottom: 1px solid #1e4a2e;
+}
+[data-theme="terminal-green"] .el-table__body tr:hover > td.el-table__cell {
+  background: rgba(51, 255, 102, 0.05) !important;
+}
+[data-theme="terminal-green"] .app-title {
+  text-shadow: 0 0 10px rgba(51, 255, 102, 0.7);
+}
+
+/* CRT 扫描线(比 cyberpunk 更浓的终端感) */
+[data-theme="terminal-green"] body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.16) 0 1px, transparent 1px 3px);
+  pointer-events: none;
+  z-index: 9999;
+}

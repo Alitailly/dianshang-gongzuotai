@@ -1,0 +1,213 @@
+/* ============================================================
+ * 全局主题变量体系
+ * ------------------------------------------------------------
+ * 主题切换机制: <html data-theme="主题名"> 根属性 + CSS 变量覆盖。
+ * 默认主题 = 黑空科技(现状样式), 变量定义在本文件 :root。
+ * 其余主题独立存放于 src/themes/*.css, 仅在自己的
+ * [data-theme="xxx"] 块内覆盖变量, 互不污染。
+ *
+ * 变量分层:
+ *   --el-*        Element Plus 官方变量(品牌色/基础底色/文字/圆角/阴影)
+ *   --app-*       业务变量(页面背景/卡片/文字档位/边框/布局尺寸)
+ *   --app-* 扩展令牌(字体人格/材质/氛围/动效)见 styles/creative.css
+ * ============================================================ */
+:root,
+[data-theme="black-air"] {
+  /* ---------- 色彩模式:浅色主题(暗色主题在对应文件中覆盖为 dark) ---------- */
+  color-scheme: light;
+
+  /* ---------- 字体体系(各主题可覆盖以实现字体差异化) ---------- */
+  --app-font: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+  --app-font-mono: 'SF Mono', 'Menlo', Consolas, 'Courier New', monospace;
+
+  /* ---------- Element Plus 品牌色 ---------- */
+  --el-color-primary: #2563eb;
+  --el-color-primary-light-3: #5588f0;
+  --el-color-primary-light-5: #7fa7f5;
+  --el-color-primary-light-7: #aac5f8;
+  --el-color-primary-light-8: #c0d5fa;
+  --el-color-primary-light-9: #e8f0fd;
+  --el-color-primary-dark-2: #1d50bc;
+  --el-color-success: #67c23a;
+  --el-color-warning: #e6a23c;
+  --el-color-danger: #f56c6c;
+  --el-color-info: #909399;
+
+  /* ---------- Element Plus 基础(浅色体系) ---------- */
+  --el-bg-color: #ffffff;
+  --el-bg-color-overlay: #ffffff;
+  --el-bg-color-page: #f5f7fa;
+  --el-text-color-primary: #303133;
+  --el-text-color-regular: #606266;
+  /* 2026-09-11 对比度审计:原 #909399 在浅底仅 2.87:1,加深到 #5f6774(≈5.3:1) */
+  --el-text-color-secondary: #5f6774;
+  /* 2026-09-11 对比度审计:原 #a8abb2 仅 2.14:1,加深到 #6b7280(≈4.5:1) */
+  --el-text-color-placeholder: #6b7280;
+  --el-border-color: #dcdfe6;
+  --el-border-color-light: #e4e7ed;
+  --el-border-color-lighter: #ebeef5;
+  --el-border-color-extra-light: #f2f6fc;
+  --el-fill-color-blank: #ffffff;
+  --el-fill-color-light: #f5f7fa;
+  --el-fill-color-lighter: #fafafa;
+
+  /* ---------- 圆角与阴影 ---------- */
+  --el-border-radius-base: 8px;
+  --el-border-radius-small: 6px;
+  --el-border-radius-round: 20px;
+  --el-box-shadow-light: 0 1px 4px rgba(0, 0, 0, 0.06);
+  --el-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+  /* ---------- 业务变量: 背景/卡片/文字 ---------- */
+  --app-bg: #f5f7fa;
+  --app-card-bg: #ffffff;
+  --app-card-border: #e8eaef;
+  --app-card-header-border: #f0f1f5;
+  --app-card-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  --app-text-primary: #303133;
+  --app-text-regular: #606266;
+  /* 2026-09-11 对比度审计:原 #909399 在浅底仅 2.87:1,加深到 #5f6774(≈5.3:1) */
+  --app-text-secondary: #5f6774;
+  /* 2026-09-11 对比度审计:原 #c0c4cc 仅 1.63:1,加深到 #6b7280(≈4.5:1) */
+  --app-text-placeholder: #6b7280;
+  --app-border: #e8eaef;
+  --app-border-light: #f0f1f5;
+  --app-hover-bg: #f5f7fa;
+  --app-success: #67c23a;
+  --app-warning: #e6a23c;
+  --app-danger: #f56c6c;
+  --app-info: #dcdfe6;
+  /* ---------- 实心语义色上的可读文字色(对比度审计 2026-09-11) ---------- */
+  --app-on-primary: #ffffff;
+  --app-on-success: #111111;
+  --app-on-danger: #050807;
+  --app-table-th-bg: #f7f8fa;
+  --app-table-th-text: #4b5563;
+  --app-log-bg: #f5f7fa;
+  --app-scrollbar-thumb: #c6ccd6;
+  --app-scrollbar-hover: #a8b0bd;
+
+  /* ---------- 业务变量: 布局(黑空科技) ---------- */
+  --app-header-height: 56px;
+  --app-header-bg: linear-gradient(90deg, #1f2329 0%, #2a2f38 100%);
+  --app-header-text: #ffffff;
+  --app-logo-bg: transparent; /* 浅色顶栏主题需给白色 Logo 加深色底,否则不可见 */
+  --app-header-soft: rgba(255, 255, 255, 0.7);
+  --app-header-btn-bg: rgba(255, 255, 255, 0.12);
+  --app-header-btn-border: rgba(255, 255, 255, 0.25);
+  --app-header-btn-hover-bg: rgba(255, 255, 255, 0.22);
+  --app-header-btn-hover-border: rgba(255, 255, 255, 0.4);
+  --app-sidebar-width: 220px;
+  --app-sidebar-bg: #ffffff;
+  --app-sidebar-border: #ececf0;
+  --app-menu-text: #4b5563;
+  --app-content-padding: 20px;
+  --app-radius-card: 10px;
+  --app-radius-dialog: 12px;
+  --app-gap: 20px;
+}
+
+/* 基础背景(跟随主题变量) */
+html,
+body,
+#app {
+  height: 100%;
+  background: var(--app-bg);
+  font-family: var(--app-font, Arial, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 滚动条美化(跟随主题) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--app-scrollbar-thumb, #c6ccd6);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--app-scrollbar-hover, #a8b0bd);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* 卡片统一样式(跟随主题变量) */
+.el-card {
+  border-radius: var(--app-radius-card, 10px);
+  border-color: var(--app-card-border, #e8eaef);
+  box-shadow: var(--app-card-shadow, 0 1px 4px rgba(0, 0, 0, 0.05));
+  background: var(--app-card-bg, #ffffff);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.el-card__header {
+  border-bottom: 1px solid var(--app-card-header-border, #f0f1f5);
+  font-weight: 600;
+  color: var(--app-text-primary, #303133);
+}
+
+/* 表格表头统一样式(跟随主题) */
+.el-table {
+  background: var(--app-card-bg, #ffffff);
+  color: var(--app-text-regular, #606266);
+  --el-table-header-bg-color: var(--app-table-th-bg, #f7f8fa);
+  --el-table-tr-bg-color: var(--app-card-bg, #ffffff);
+  --el-table-border-color: var(--app-border-light, #f0f1f5);
+  --el-table-row-hover-bg-color: var(--app-hover-bg, #f5f7fa);
+  --el-table-bg-color: var(--app-card-bg, #ffffff);
+}
+.el-table th.el-table__cell {
+  background: var(--app-table-th-bg, #f7f8fa) !important;
+  color: var(--app-table-th-text, #4b5563);
+  font-weight: 600;
+}
+
+/* 表格固定列补丁 / 列筛选面板：避免深色主题下残留白色块 */
+.el-table__header-wrapper tr td.el-table__fixed-right-patch,
+.el-table__header-wrapper tr th.el-table__fixed-right-patch,
+.el-table__body-wrapper tr td.el-table__fixed-right-patch,
+.el-table__body-wrapper tr th.el-table__fixed-right-patch,
+.el-table__footer-wrapper tr td.el-table__fixed-right-patch,
+.el-table__footer-wrapper tr th.el-table__fixed-right-patch,
+.el-table-filter {
+  background: var(--app-card-bg, #ffffff) !important;
+}
+
+/* 弹窗/抽屉跟随主题 */
+.el-dialog {
+  border-radius: var(--app-radius-dialog, 12px);
+  background: var(--app-card-bg, #ffffff);
+  --el-dialog-bg-color: var(--app-card-bg, #ffffff);
+}
+
+/* 下拉/弹出层跟随主题 */
+.el-popper,
+.el-select-dropdown,
+.el-dropdown-menu {
+  --el-bg-color-overlay: var(--app-card-bg, #ffffff);
+}
+
+/* 表单与输入控件跟随主题 */
+.el-input__wrapper,
+.el-textarea__inner,
+.el-select__wrapper {
+  --el-input-bg-color: var(--app-card-bg, #ffffff);
+}
+
+/* 页面级过渡(主题切换时柔和渐变) */
+body {
+  transition: background-color 0.3s ease;
+}
+
+/* 询盘账号忙碌提示特效(2026-08-07):呼吸描边,提醒该账号有任务在跑 */
+.task-lock-alert {
+  animation: task-lock-pulse 1.6s ease-in-out infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes task-lock-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(230, 162, 60, 0.45); }
+  50% { box-shadow: 0 0 0 8px rgba(230, 162, 60, 0.06); }
+}

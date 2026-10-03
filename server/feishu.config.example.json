@@ -1,0 +1,18 @@
+{
+  "FEISHU_APP_ID": "cli_xxxxxxxxxxxxxxx",
+  "FEISHU_APP_SECRET": "填写飞书应用密钥",
+  "FEISHU_APP_TOKEN": "填写 app_token（bascn... 或 base 链接中的 token）",
+  "ALPHASHOP_APP_ID": "cli_xxxxxxxxxxxxxxx",
+  "ALPHASHOP_APP_SECRET": "填写飞书应用密钥",
+  "SCREENING_APP_TOKEN": "填写 app_token（bascn... 或 base 链接中的 token）",
+  "SCREENING_TABLE_ID": "tblxxxxxxxxxxxxxxxx",
+  "SCREENING_VIEW_ID": "vewxxxxxxxx",
+  "PRODUCTS_APP_TOKEN": "填写 app_token（bascn... 或 base 链接中的 token）",
+  "PRODUCTS_TABLE_ID": "tblxxxxxxxxxxxxxxxx",
+  "PRODUCTS_VIEW_ID": "vewxxxxxxxx",
+  "FINAL_APP_TOKEN": "填写 app_token（bascn... 或 base 链接中的 token）",
+  "FINAL_TABLE_ID": "tblxxxxxxxxxxxxxxxx",
+  "FINAL_VIEW_ID": "vewxxxxxxxx",
+  "INQUIRY_RECORDS_TABLE_ID": "tblxxxxxxxxxxxxxxxx",
+  "FEISHU_USER_IDS": {}
+}

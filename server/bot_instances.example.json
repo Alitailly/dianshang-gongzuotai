@@ -1,0 +1,20 @@
+{
+  "instances": [
+    {
+      "id": "bot-mac1",
+      "name": "MAC1",
+      "ip": "192.168.1.20",
+      "control_port": 18810,
+      "account": "account_1",
+      "token": ""
+    },
+    {
+      "id": "bot-mac2",
+      "name": "MAC2",
+      "ip": "192.168.1.30",
+      "control_port": 18810,
+      "account": "account_2",
+      "token": ""
+    }
+  ]
+}
